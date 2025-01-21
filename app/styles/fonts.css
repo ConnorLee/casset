@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "Autoscape Round";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/AutoscapeRoundLLTrialWeb-Bold-zykJEjYINPpQHRoIEf6x9YLJTsOss4.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Autoscape Round Variable */
+@font-face {
+  font-family: "Autoscape Round Variable";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/AutoscapeRoundLLVarTrialWeb-YWZd8FjqcGOjDJ3LyYqR7RrHaj3qH8.woff2")
+    format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Cobra VIP */
+@font-face {
+  font-family: "Cobra VIP";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/CobraLLVIPTrialWeb-hCT03iT1bKlV5uJEFPMctkfG562mTI.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Superstudio Regular */
+@font-face {
+  font-family: "Superstudio";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/SuperstudioLLTrialWeb-Regular-nJtym3krSmNUgV6ZEF3WxUIjsh3pTi.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Superstudio Light */
+@font-face {
+  font-family: "Superstudio";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/SuperstudioLLTrialWeb-Light-j1ERpUeQts9w1Hi9MWNTt9vhHd7jO6.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Superstudio Bold */
+@font-face {
+  font-family: "Superstudio";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/SuperstudioLLTrialWeb-Bold-yTTtaEAmSZUNlqoYERiiRtYh85NYlV.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* AeonikPro Black */
+@font-face {
+  font-family: "AeonikPro";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/AeonikPro-Black-PHo1nnNg8OK05W9BnExBBmx7Ezw5xz.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* AeonikPro Bold */
+@font-face {
+  font-family: "AeonikPro";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/AeonikPro-Bold-dlzNY1RmTHO6BJhZdbQCnkwTRP7LxK.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* AeonikPro Light */
+@font-face {
+  font-family: "AeonikPro";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/AeonikPro-Light-wzejUaszhUaaMlmWDjzxn6dwWjoZ9V.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Satoshi Variable */
+@font-face {
+  font-family: "Satoshi-Variable";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/Satoshi-Variable-k0uEkkWd678XoJ5BZXvnljjWWVnLAh.ttf")
+    format("truetype");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Satoshi Regular */
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/Satoshi-Regular-DAawAE7IAyez1uprVgiuLCfvBY6pc6.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Satoshi Bold */
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/Satoshi-Bold-lDp5V604GnJFfTBoTbUSgcHdbrSl7f.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Satoshi Black */
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/Satoshi-Black-DqAtzJfEINTKN2wIQ2zPR0mphJtju9.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+

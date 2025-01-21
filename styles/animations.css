@@ -1,0 +1,53 @@
+@keyframes pulse-out {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes radial-pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-pulse-out {
+  animation: pulse-out 4s infinite;
+}
+
+.animate-radial-pulse {
+  animation: radial-pulse 3s ease-out infinite;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
