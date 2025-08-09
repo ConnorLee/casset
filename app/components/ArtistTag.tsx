@@ -16,20 +16,7 @@ export function ArtistTag({ tag, isActive = false }: ArtistTagProps) {
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.2 }}
     >
-      <svg width="20" height="20" viewBox="0 0 312 688" className="text-[#6366f1]" xmlns="http://www.w3.org/2000/svg">
-        <text
-          transform="translate(149, 344) rotate(1) translate(-149, -344)"
-          fill="currentColor"
-          fontFamily="CobraLLVIPTrial-500, Cobra LL VIP Trial"
-          fontSize="620.165992"
-          fontWeight="normal"
-          letterSpacing="-19.88424"
-        >
-          <tspan x="6" y="543">
-            a
-          </tspan>
-        </text>
-      </svg>
+      <span className="text-[#6366f1] text-lg font-bold">@</span>
       <span
         className="text-gray-900 font-medium"
         style={{

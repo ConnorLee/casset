@@ -373,26 +373,7 @@ export default function ConnorPageClient() {
           {/* Artist Name Tag - Modern user handle design with Cobra VIP "a" */}
           <div className="flex justify-center mb-6">
             <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-lg">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 312 688"
-                className="text-[#F1FF9B]"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <text
-                  transform="translate(149, 344) rotate(1) translate(-149, -344)"
-                  fill="currentColor"
-                  fontFamily="CobraLLVIPTrial-500, Cobra LL VIP Trial"
-                  fontSize="620.165992"
-                  fontWeight="normal"
-                  letterSpacing="-19.88424"
-                >
-                  <tspan x="6" y="543">
-                    a
-                  </tspan>
-                </text>
-              </svg>
+              <span className="text-[#F1FF9B] text-xl font-bold">@</span>
               <span
                 className="text-white text-lg font-medium"
                 style={{
