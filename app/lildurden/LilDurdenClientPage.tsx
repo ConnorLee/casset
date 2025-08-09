@@ -370,8 +370,8 @@ export default function LilDurdenClientPage() {
             </div>
           </div>
 
-          {/* Artist Name Tag - Modern user handle design with @ symbol */}
-          <div className="flex justify-center mb-6">
+          {/* Artist Name Tag - Modern user handle design with @ symbol - Moved up by -2.2em */}
+          <div className="flex justify-center mb-6" style={{ marginTop: "-2.2em" }}>
             <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-lg">
               <span className="text-[#F1FF9B] text-xl font-bold">@</span>
               <span

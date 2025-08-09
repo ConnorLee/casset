@@ -1,177 +1,162 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import Image from "next/image"
-import { Input } from "@/components/ui/input"
-import { MovingBackground } from "@/components/moving-background"
-import { useRouter } from "next/navigation"
 
-const FloatingCard = ({ src, className }: { src: string; className: string }) => (
-  <motion.div
-    initial={{ y: 0, rotate: 0 }}
-    animate={{
-      y: [-20, 20, -20],
-      rotate: [-5, 5, -5],
-    }}
-    transition={{
-      duration: 12,
-      repeat: Number.POSITIVE_INFINITY,
-      ease: "easeInOut",
-    }}
-    className={`absolute ${className}`}
-  >
-    <div className="rounded-2xl bg-white p-3 shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
-      <Image src={src || "/placeholder.svg"} alt="Floating card" width={300} height={150} className="rounded-xl" />
-    </div>
-  </motion.div>
-)
+import { useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { Eye, EyeOff } from "lucide-react"
 
 export default function PlayPage() {
   const [password, setPassword] = useState("")
-  const [error, setError] = useState("")
-  const router = useRouter()
+  const [showPassword, setShowPassword] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-
-    if (password.toLowerCase() === "reelitin") {
-      // Set authentication token in localStorage
-      localStorage.setItem("auth-token", "authenticated")
-      // Redirect to private page
-      router.push("/private-x7k2m9")
-    } else {
-      setError("Incorrect password")
-      setTimeout(() => setError(""), 3000)
+    if (password === "dev123") {
+      window.location.href = "/private-x7k2m9"
     }
   }
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-      <MovingBackground />
+    <main className="min-h-screen relative overflow-hidden bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute top-40 right-32 w-24 h-24 bg-blue-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-32 left-1/3 w-40 h-40 bg-indigo-500/20 rounded-full blur-xl animate-pulse delay-2000"></div>
+        <div className="absolute bottom-20 right-20 w-28 h-28 bg-pink-500/20 rounded-full blur-xl animate-pulse delay-3000"></div>
+      </div>
 
-      {/* Navigation */}
-      <nav className="absolute right-6 top-6 flex items-center gap-6 z-50">
-        <Link href="/about" className="text-sm font-medium tracking-wide text-white/80 hover:text-white">
-          ABOUT
-        </Link>
-        <Link
-          href="/app"
-          className="rounded-full bg-[#ffff8a] px-4 py-1 text-sm font-medium hover:bg-[#ffff7a] text-black"
-        >
-          app
-        </Link>
-      </nav>
-
-      {/* Floating Cards */}
-      <FloatingCard
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a-blurry-photo-of-a-clock-on-a-wall-87PP9Zd7MNo%20Copy%2013-XojIQKb1zSdWbEfkicvqe1lBPCwsgB.png"
-        className="left-[15%] top-[20%]"
-      />
-      <FloatingCard
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a-blurry-photo-of-a-clock-on-a-wall-87PP9Zd7MNo%20Copy%2014-IXi3rWMlpouMPvOzdkcZRVTKjj3gzN.png"
-        className="right-[15%] top-[15%]"
-      />
-      <FloatingCard
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a-blurry-photo-of-a-clock-on-a-wall-87PP9Zd7MNo%20Copy%2012-GqneCxsaLnV1DvcPkEVjeTb7k2nxi0.png"
-        className="left-[20%] bottom-[25%]"
-      />
-      <FloatingCard
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a-blurry-photo-of-a-clock-on-a-wall-87PP9Zd7MNo%20Copy%2012-fNwehpcxXRLQkiF149ZPLddsLiWQiJ.png"
-        className="right-[20%] bottom-[20%]"
-      />
-
-      {/* Main Content */}
-      <main className="relative flex min-h-screen w-full flex-col items-center justify-center px-4">
-        <div className="flex flex-col items-center gap-8">
-          {/* Logo Section */}
-          <div className="flex flex-col items-center gap-4 mb-8">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-sm flex items-center justify-center">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Group%2010-QAjWhUiCnRa0mwzhKi9bI0Oaba5ZMK.png"
-                alt="Casset Logo"
-                width={40}
-                height={40}
-                className="w-10 h-10"
-              />
-            </div>
-            <h1 className="text-2xl font-bold tracking-wider text-white">CASSET PLAYER</h1>
-            <p className="text-sm text-white/70 tracking-wide">SELECT YOUR EXPERIENCE</p>
-          </div>
-
-          {/* Player Options */}
-          <div className="flex flex-col gap-4 w-full max-w-sm">
-            <Link
-              href="/connor"
-              className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-600/80 to-pink-600/80 backdrop-blur-sm border border-white/20 p-6 hover:scale-105 transition-all duration-300"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">C</span>
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold text-lg">Connor James</h3>
-                  <p className="text-white/70 text-sm">Electronic • Ambient</p>
-                </div>
-              </div>
-            </Link>
-
-            <Link
-              href="/lildurden"
-              className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600/80 to-cyan-600/80 backdrop-blur-sm border border-white/20 p-6 hover:scale-105 transition-all duration-300"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">L</span>
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold text-lg">Lil Durden</h3>
-                  <p className="text-white/70 text-sm">Hip-Hop • Trap</p>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          {/* Password Section (Hidden by default, can be toggled) */}
-          <div className="mt-8 opacity-30 hover:opacity-100 transition-opacity duration-300">
-            <form onSubmit={handleSubmit} className="w-full max-w-xs flex flex-col items-center gap-4">
-              <Input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Developer access"
-                className="border-0 bg-white/10 backdrop-blur-sm px-4 py-2 text-center tracking-[0.3em] text-white placeholder:text-white/50 focus-visible:ring-1 focus-visible:ring-white/30"
-                maxLength={20}
-              />
-
-              {error && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="text-sm text-red-400"
-                >
-                  {error}
-                </motion.p>
-              )}
-
-              <button
-                type="submit"
-                className="rounded-full bg-white/20 backdrop-blur-sm px-6 py-1.5 text-sm font-medium text-white hover:bg-white/30 transition-colors border border-white/30"
-              >
-                access
-              </button>
-            </form>
+      {/* Main content */}
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
+        {/* Logo */}
+        <div className="mb-12">
+          <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-2xl">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/casset-1VeeIJGLAluNE9b4Cn7PdyHM3CXt4f.png"
+              alt="Casset"
+              width={48}
+              height={48}
+              className="opacity-90"
+            />
           </div>
         </div>
 
-        {/* Watermark */}
-        <div className="absolute bottom-6 text-sm text-white/30">casset!</div>
-      </main>
-    </div>
+        {/* Title */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">CASSET PLAYER</h1>
+          <p className="text-xl text-white/70 font-light">SELECT YOUR EXPERIENCE</p>
+        </div>
+
+        {/* Player Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 w-full max-w-4xl">
+          {/* Connor James Card */}
+          <Link href="/connor" className="group">
+            <div className="relative p-8 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-md border border-white/20 shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-purple-500/30 hover:to-pink-500/30 animate-float">
+              <div className="text-center">
+                {/* Avatar */}
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                  C
+                </div>
+
+                {/* Artist Info */}
+                <h3 className="text-2xl font-bold text-white mb-2">Connor James</h3>
+                <p className="text-white/70 mb-4">Alternative • Indie Rock</p>
+
+                {/* Stats */}
+                <div className="flex justify-center gap-6 text-sm">
+                  <div className="text-center">
+                    <div className="text-white font-bold">21</div>
+                    <div className="text-white/60">TRACKS</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-white font-bold">2</div>
+                    <div className="text-white/60">VIDEOS</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hover glow effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+          </Link>
+
+          {/* Lil Durden Card */}
+          <Link href="/lildurden" className="group">
+            <div className="relative p-8 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-md border border-white/20 shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-blue-500/30 hover:to-cyan-500/30 animate-float-delay">
+              <div className="text-center">
+                {/* Avatar */}
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                  L
+                </div>
+
+                {/* Artist Info */}
+                <h3 className="text-2xl font-bold text-white mb-2">Lil Durden</h3>
+                <p className="text-white/70 mb-4">Hip-Hop • Experimental</p>
+
+                {/* Stats */}
+                <div className="flex justify-center gap-6 text-sm">
+                  <div className="text-center">
+                    <div className="text-white font-bold">15</div>
+                    <div className="text-white/60">TRACKS</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-white font-bold">1</div>
+                    <div className="text-white/60">VIDEOS</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hover glow effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+          </Link>
+        </div>
+
+        {/* Developer Access */}
+        <div className="w-full max-w-sm">
+          <form onSubmit={handlePasswordSubmit} className="relative">
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Developer access..."
+                className="w-full px-4 py-3 bg-white/5 backdrop-blur-md border border-white/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-white/40 transition-colors text-sm"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/40 hover:text-white/60 transition-colors"
+              >
+                {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {/* Custom animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes float-delay {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-15px); }
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-float-delay {
+          animation: float-delay 6s ease-in-out infinite 1s;
+        }
+      `}</style>
+    </main>
   )
 }
