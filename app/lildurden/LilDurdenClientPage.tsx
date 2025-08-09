@@ -7,6 +7,7 @@ import { Lekton } from "next/font/google"
 import { RotateCcw, Plus, X, Play } from "lucide-react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 const lekton = Lekton({
   weight: ["400", "700"],
@@ -60,10 +61,11 @@ export default function LilDurdenClientPage() {
   const [activeTab, setActiveTab] = useState<"tracks" | "videos">("tracks") // New state for tab switching
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const PREVIEW_DURATION = 33
+  const [scrollY, setScrollY] = useState(0)
 
   const currentPlaylist = isSideA ? playlists.connorJames : playlists.lilDurden
   const currentArtist = isSideA ? "Connor James" : "Lil Durden"
-  const currentUsername = isSideA ? "connorjames" : "lildurden"
+  const currentUsername = isSideA ? "connor" : "lildurden"
   const currentVideos = isSideA ? videoData.connorjames : videoData.lildurden
   const currentProfileImage = isSideA
     ? "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7673-d2E7Y1VpaQrxDBErSLQ4HrWmTM4RqG.png"
@@ -230,6 +232,12 @@ export default function LilDurdenClientPage() {
     loadSong(currentSongIndex)
   }, [loadSong, currentSongIndex, isSideA])
 
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
     <main className="min-h-screen text-white relative overflow-hidden">
       {/* Background Image - Lil Durden: Theater/Stage aesthetic */}
@@ -260,7 +268,11 @@ export default function LilDurdenClientPage() {
         </button>
 
         {/* Casset Logo */}
-        <div className="absolute left-1/2 transform -translate-x-1/2">
+        <Link
+          href="/"
+          className="absolute left-1/2 transform -translate-x-1/2 transition-opacity duration-300"
+          style={{ opacity: Math.max(0, 1 - scrollY / 200) }}
+        >
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/casset-1VeeIJGLAluNE9b4Cn7PdyHM3CXt4f.png"
             alt="Casset"
@@ -268,7 +280,7 @@ export default function LilDurdenClientPage() {
             height={30}
             className="h-6 w-auto opacity-70"
           />
-        </div>
+        </Link>
 
         {/* Flip Side Button */}
         <button
@@ -319,7 +331,7 @@ export default function LilDurdenClientPage() {
         {/* Artist Header */}
         <div className="text-center mb-12 relative">
           {/* Profile Photo with Verified Badge and Price */}
-          <div className="flex justify-center mb-8 relative">
+          <div className="flex justify-center mb-6 relative">
             <div className="relative">
               {/* Profile Image */}
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-lg">
@@ -361,8 +373,8 @@ export default function LilDurdenClientPage() {
             </div>
           </div>
 
-          {/* Artist Name Tag - Larger and Crooked */}
-          <div className="flex justify-center mb-8">
+          {/* Artist Name Tag - Larger and moved up */}
+          <div className="flex justify-center mb-6">
             <div
               className="backdrop-blur-sm rounded-full shadow-lg border border-gray-700/50 px-6 py-3"
               style={{
@@ -473,7 +485,9 @@ export default function LilDurdenClientPage() {
                 >
                   <div className="flex items-center gap-4">
                     <span className="text-sm opacity-50 w-6">{index + 1}</span>
-                    <span className={`${lekton.className} text-sm`}>{song.title.toUpperCase()}</span>
+                    <span className={`${lekton.className} text-sm`} style={{ opacity: 0.7, color: "#ffffff" }}>
+                      {song.title.toUpperCase()}
+                    </span>
                   </div>
                   {index === currentSongIndex && isPlaying && (
                     <div className="flex items-center gap-1">

@@ -23,9 +23,25 @@ export function ArtistTag({ tag, isActive = false }: ArtistTagProps) {
     >
       <div className="flex items-center whitespace-nowrap px-4 py-1.5">
         <div className="mr-3 flex items-center justify-center">
-          <span className="text-[#0000FF] text-2xl font-bold" style={{ fontFamily: "'Cobra VIP', sans-serif" }}>
-            a
-          </span>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 300 682"
+            className="text-[#EDFF7E]"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <text
+              fill="#EDFF7E"
+              fontFamily="CobraLLVIPTrial-500, Cobra LL VIP Trial"
+              fontSize="720.165992"
+              fontWeight="normal"
+              letterSpacing="-19.88424"
+            >
+              <tspan x="0" y="700">
+                a
+              </tspan>
+            </text>
+          </svg>
         </div>
         <span
           className="text-[#000033]"

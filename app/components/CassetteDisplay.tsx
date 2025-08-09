@@ -190,13 +190,11 @@ export function CassetteDisplay({
         </div>
 
         <div className="absolute top-[4px] right-2 flex items-center z-30">
-          {" "}
-          {/* Updated line */}
           <span
             className={`text-sm ${commonStyles.textColor} opacity-70`}
             style={{ fontFamily: "'Cobra VIP', sans-serif", fontWeight: "200" }}
           >
-            video
+            casset
           </span>
         </div>
 
@@ -288,7 +286,10 @@ export function CassetteDisplay({
                 className={`w-16 h-16 ${isSideA ? "bg-white bg-opacity-10" : "bg-[#8B0000] bg-opacity-50"} rounded-full flex items-center justify-center shadow-inner`}
               >
                 <div
-                  className={`relative w-10 h-10 ${isSideA ? "bg-white bg-opacity-10" : "bg-[#4B0000] bg-opacity-50"} rounded-full ${isPlaying ? "animate-spin-slow" : ""}`}
+                  className={`relative w-10 h-10 ${isSideA ? "bg-white bg-opacity-10" : "bg-[#4B0000] bg-opacity-50"} rounded-full ${isPlaying ? "animate-spin" : ""}`}
+                  style={{
+                    animation: isPlaying ? "spin 2s linear infinite" : "none",
+                  }}
                 >
                   <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full opacity-50">
                     {[...Array(12)].map((_, i) => (

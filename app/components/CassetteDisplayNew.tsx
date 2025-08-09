@@ -250,7 +250,10 @@ export function CassetteDisplayNew({
               className={`w-16 h-16 ${isSideA ? "bg-gray-200" : "bg-gray-300"} bg-opacity-50 rounded-full flex items-center justify-center shadow-inner`}
             >
               <div
-                className={`relative w-10 h-10 ${isSideA ? "bg-gray-100" : "bg-gray-200"} bg-opacity-50 rounded-full ${isPlaying ? "animate-spin-slow" : ""}`}
+                className={`relative w-10 h-10 ${isSideA ? "bg-gray-100" : "bg-gray-200"} bg-opacity-50 rounded-full ${isPlaying ? "animate-spin" : ""}`}
+                style={{
+                  animation: isPlaying ? "spin 2s linear infinite" : "none",
+                }}
               >
                 <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full opacity-50">
                   {[...Array(12)].map((_, i) => (

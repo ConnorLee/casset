@@ -90,6 +90,13 @@ export default function NewLandingPage() {
   const handleArtistSelect = useCallback((artist: Artist) => {
     setSelectedArtist(artist)
     setAutoCycling(false)
+
+    // Navigate to artist page based on artist name
+    if (artist.name === "Connor James") {
+      window.location.href = "/connor"
+    } else if (artist.name === "Lil Durden") {
+      window.location.href = "/lildurden"
+    }
   }, [])
 
   const handleCassetteClick = useCallback(() => {
@@ -103,7 +110,7 @@ export default function NewLandingPage() {
 
       {/* Navigation Section */}
       <nav className="fixed top-8 w-full px-4 md:px-8 flex justify-between items-center z-50">
-        <div className="w-20 md:w-24 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
+        <Link href="/" className="w-20 md:w-24 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
           <span
             className="text-2xl md:text-3xl"
             style={{
@@ -114,7 +121,7 @@ export default function NewLandingPage() {
           >
             casset
           </span>
-        </div>
+        </Link>
         <div className="flex items-center gap-4">
           <Link href="/about" className="text-sm font-medium hover:opacity-70 transition-colors">
             about

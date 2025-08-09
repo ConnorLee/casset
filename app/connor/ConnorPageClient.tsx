@@ -7,6 +7,7 @@ import { Lekton } from "next/font/google"
 import { RotateCcw, Plus, X, Play } from "lucide-react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 const lekton = Lekton({
   weight: ["400", "700"],
@@ -64,7 +65,7 @@ export default function ConnorPageClient() {
 
   const currentPlaylist = isSideA ? playlists.connorJames : playlists.lilDurden
   const currentArtist = isSideA ? "Connor James" : "Lil Durden"
-  const currentUsername = isSideA ? "connorjames" : "lildurden"
+  const currentUsername = isSideA ? "connor" : "lildurden"
   const currentVideos = isSideA ? videoData.connorjames : videoData.lildurden
   const currentProfileImage = isSideA
     ? "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7673-d2E7Y1VpaQrxDBErSLQ4HrWmTM4RqG.png"
@@ -267,7 +268,8 @@ export default function ConnorPageClient() {
         </button>
 
         {/* Casset Logo */}
-        <div
+        <Link
+          href="/"
           className="absolute left-1/2 transform -translate-x-1/2 transition-opacity duration-300"
           style={{ opacity: Math.max(0, 1 - scrollY / 200) }}
         >
@@ -278,7 +280,7 @@ export default function ConnorPageClient() {
             height={30}
             className="h-6 w-auto opacity-70"
           />
-        </div>
+        </Link>
 
         {/* Flip Side Button */}
         <button
@@ -329,7 +331,7 @@ export default function ConnorPageClient() {
         {/* Artist Header */}
         <div className="text-center mb-12 relative">
           {/* Profile Photo with Verified Badge and Price */}
-          <div className="flex justify-center mb-8 relative">
+          <div className="flex justify-center mb-6 relative">
             <div className="relative">
               {/* Profile Image */}
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-lg">
@@ -371,10 +373,10 @@ export default function ConnorPageClient() {
             </div>
           </div>
 
-          {/* Artist Name Tag - More compact with larger handle */}
-          <div className="flex justify-center mb-8">
+          {/* Artist Name Tag - Larger and moved up */}
+          <div className="flex justify-center mb-6">
             <div
-              className="backdrop-blur-sm rounded-full shadow-lg border border-gray-700/50 px-4 py-2"
+              className="backdrop-blur-sm rounded-full shadow-lg border border-gray-700/50 px-5 py-2.5"
               style={{
                 transform: `rotate(-8deg)`,
                 backgroundColor: "rgb(255 255 255 / 21%)",
@@ -382,8 +384,8 @@ export default function ConnorPageClient() {
             >
               <div className="flex items-center whitespace-nowrap">
                 <svg
-                  width="48"
-                  height="48"
+                  width="44"
+                  height="44"
                   viewBox="0 0 312 688"
                   className="mr-2 flex-shrink-0"
                   xmlns="http://www.w3.org/2000/svg"
@@ -402,7 +404,7 @@ export default function ConnorPageClient() {
                   </text>
                 </svg>
                 <span
-                  className="text-white text-lg"
+                  className="text-white text-xl"
                   style={{
                     fontFamily: "'AeonikPro', sans-serif",
                     fontWeight: "900",
@@ -483,7 +485,9 @@ export default function ConnorPageClient() {
                 >
                   <div className="flex items-center gap-4">
                     <span className="text-sm opacity-50 w-6">{index + 1}</span>
-                    <span className={`${lekton.className} text-sm`}>{song.title.toUpperCase()}</span>
+                    <span className={`${lekton.className} text-sm`} style={{ opacity: 0.7, color: "#ffffff" }}>
+                      {song.title.toUpperCase()}
+                    </span>
                   </div>
                   {index === currentSongIndex && isPlaying && (
                     <div className="flex items-center gap-1">
