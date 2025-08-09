@@ -118,30 +118,37 @@ export default function RootLayout({
         {/* Preload custom fonts */}
         <link
           rel="preload"
-          href="/fonts/AutoscapeRoundLLTrialWeb-Regular.woff2"
+          href="https://mann172d906w0mrr.public.blob.vercel-storage.com/AutoscapeRoundLLTrialWeb-Regular-zykJEjYINPpQHRoIEf6x9YLJTsOss4.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
           rel="preload"
-          href="/fonts/AutoscapeRoundLLTrialWeb-Bold.woff2"
+          href="https://mann172d906w0mrr.public.blob.vercel-storage.com/AutoscapeRoundLLTrialWeb-Bold-zykJEjYINPpQHRoIEf6x9YLJTsOss4.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
           rel="preload"
-          href="/fonts/SuperstudioTrial-Bold.otf"
+          href="https://mann172d906w0mrr.public.blob.vercel-storage.com/SuperstudioLLTrialWeb-Bold-yTTtaEAmSZUNlqoYERiiRtYh85NYlV.woff2"
           as="font"
-          type="font/opentype"
+          type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
           rel="preload"
-          href="/fonts/CobraVIPTrial-Regular.woff2"
+          href="https://mann172d906w0mrr.public.blob.vercel-storage.com/CobraLLVIPTrialWeb-hCT03iT1bKlV5uJEFPMctkfG562mTI.woff2"
           as="font"
           type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="https://mann172d906w0mrr.public.blob.vercel-storage.com/Satoshi-Variable-k0uEkkWd678XoJ5BZXvnljjWWVnLAh.ttf"
+          as="font"
+          type="font/truetype"
           crossOrigin="anonymous"
         />
       </head>
@@ -149,9 +156,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-//Make sure to place all font files in the `/public/fonts/` directory:
-//- /public/fonts/AutoscapeRoundLLTrialWeb-Regular.woff2
-//- /public/fonts/AutoscapeRoundLLTrialWeb-Bold.woff2
-//- /public/fonts/SuperstudioTrial-Bold.otf
-//- /public/fonts/CobraVIPTrial-Regular.woff2

@@ -7,8 +7,8 @@ module.exports = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
     "./public/**/*.svg",
-      "*.{js,ts,jsx,tsx,mdx}"
-],
+    "*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -20,9 +20,13 @@ module.exports = {
         "square-peg": ["var(--font-square-peg)", "cursive"],
         "swanky-and-moo-moo": ["var(--font-swanky-and-moo-moo)", "cursive"],
         autoscape: ['"Autoscape Round LL Trial"', "sans-serif"],
-        superstudio: ['"Superstudio Trial"', "sans-serif"],
-        cobra: ['"Cobra LL VIP Trial"', "sans-serif"],
-        satoshi: ["var(--font-satoshi)", "sans-serif"],
+        "autoscape-variable": ['"Autoscape Round Variable"', "sans-serif"],
+        superstudio: ['"Superstudio"', "sans-serif"],
+        cobra: ['"Cobra VIP"', "sans-serif"],
+        "cobra-vip": ['"Cobra VIP"', "sans-serif"],
+        aeonik: ['"AeonikPro"', "sans-serif"],
+        satoshi: ['"Satoshi"', "sans-serif"],
+        "satoshi-variable": ['"Satoshi-Variable"', "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

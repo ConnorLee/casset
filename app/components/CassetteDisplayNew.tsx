@@ -346,12 +346,14 @@ export function CassetteDisplayNew({
       <div className="absolute bottom-4 md:bottom-6 left-0 right-0 flex flex-col gap-1 md:gap-2 z-40">
         {/* Track Name Display */}
         <div className="text-center mb-1">
-          <span
-            className="text-lg md:text-2xl font-bold text-gray-800"
-            style={{ fontFamily: "'Autoscape Round Variable', sans-serif" }}
-          >
-            {(currentSong?.title || "No song selected").toUpperCase()}
-          </span>
+          {currentSong && (
+            <span
+              className="text-lg md:text-2xl font-bold text-gray-800"
+              style={{ fontFamily: "'Autoscape Round Variable', sans-serif" }}
+            >
+              {currentSong.title.toUpperCase()}
+            </span>
+          )}
         </div>
         {/* Playback Progress Bar */}
         <div className="px-4 md:px-6">

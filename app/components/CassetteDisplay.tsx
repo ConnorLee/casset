@@ -382,12 +382,14 @@ export function CassetteDisplay({
         </div>
 
         <div className="text-center mb-1">
-          <span
-            className="text-lg md:text-2xl font-bold text-gray-800"
-            style={{ fontFamily: "'Autoscape Round LL Trial', sans-serif" }}
-          >
-            {(currentSong?.title || "No song selected").toUpperCase()}
-          </span>
+          {currentSong && (
+            <span
+              className="text-lg md:text-2xl font-bold text-gray-800"
+              style={{ fontFamily: "'Autoscape Round LL Trial', sans-serif" }}
+            >
+              {currentSong.toUpperCase()}
+            </span>
+          )}
         </div>
 
         <div

@@ -102,25 +102,19 @@ export default function NewLandingPage() {
       <TextCarousel />
 
       <nav className="fixed top-8 w-full px-4 md:px-8 flex justify-between items-center z-50">
-        <svg
-          width="104"
-          height="50"
-          viewBox="0 0 104 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-20 md:w-24 opacity-70 hover:opacity-100 transition-opacity cursor-pointer"
-        >
-          <text x="2" y="35" fill="currentColor" fontSize="40" fontFamily="Cobra VIP">
+        <div className="w-20 md:w-24 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
+          <span
+            className="text-2xl md:text-3xl"
+            style={{
+              fontFamily: "'Cobra VIP', 'Arial Black', sans-serif",
+              fontWeight: "bold",
+              letterSpacing: "1px",
+            }}
+          >
             casset
-          </text>
-        </svg>
+          </span>
+        </div>
         <div className="flex items-center gap-4">
-          <Link href="/cover" className="text-[#000033] text-sm hover:text-[#000033]/70 transition-colors">
-            Cover
-          </Link>
-          <Link href="/gallery" className="text-[#000033] text-sm hover:text-[#000033]/70 transition-colors">
-            Gallery
-          </Link>
           <Link
             href="/app"
             className="px-4 py-1.5 bg-[#F1FF9B] text-[#000033] text-sm hover:bg-[#F1FF9B]/90 transition-colors"
@@ -140,12 +134,6 @@ export default function NewLandingPage() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <div
-              className="text-4xl opacity-70"
-              style={{ fontFamily: "'Cobra LL VIP Trial', sans-serif", fontWeight: "200" }}
-            >
-              casset
-            </div>
             <div className="flex items-center gap-2 mb-4">
               <span
                 className="text-3xl"
