@@ -14,9 +14,9 @@ const lekton = Lekton({
   style: ["normal", "italic"],
 })
 
-export default function ConnorPage() {
+export default function LilDurdenPage() {
   const router = useRouter()
-  const [isSideA, setIsSideA] = useState(true) // true = Connor James (Side A), false = Lil Durden (Side B)
+  const [isSideA, setIsSideA] = useState(false) // false = Lil Durden (Side B)
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
   const [currentSongIndex, setCurrentSongIndex] = useState(0)
@@ -166,14 +166,14 @@ export default function ConnorPage() {
     setCurrentTime(0)
     setIsShaking(true)
 
-    if (isSideA) {
-      // Going to Side B - navigate to /lildurden
+    if (!isSideA) {
+      // Going to Side A - navigate to /connor
       setTimeout(() => {
-        router.push("/lildurden")
+        router.push("/connor")
       }, 250)
     } else {
-      // Going to Side A - stay on current page
-      setIsSideA(true)
+      // Going to Side B - stay on current page
+      setIsSideA(false)
       setTimeout(() => setIsShaking(false), 500)
     }
   }
