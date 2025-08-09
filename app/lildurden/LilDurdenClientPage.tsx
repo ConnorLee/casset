@@ -57,8 +57,8 @@ export default function LilDurdenClientPage() {
   const [isLoading, setIsLoading] = useState(false)
   const [isShaking, setIsShaking] = useState(false)
   const [showInfo, setShowInfo] = useState(false)
-  const [showAddToHomeDialog, setShowAddToHomeDialog] = useState(false)
-  const [activeTab, setActiveTab] = useState<"tracks" | "videos">("tracks") // New state for tab switching
+  const [showComingSoonDialog, setShowComingSoonDialog] = useState(false)
+  const [activeTab, setActiveTab] = useState<"tracks" | "videos">("tracks")
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const PREVIEW_DURATION = 33
   const [scrollY, setScrollY] = useState(0)
@@ -80,7 +80,7 @@ export default function LilDurdenClientPage() {
     ? "https://music.apple.com/us/artist/connor-james/1492389123"
     : "https://music.apple.com/us/artist/lil-durden/1680622986"
 
-  // Background images for each artist - Using new provided backgrounds
+  // Background images for each artist
   const currentBackgroundImage =
     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202023-04-02%20at%202.38.29%20PM-w42HBXKac46oxS5EBI8p8v1vpm1r4j.png"
 
@@ -224,8 +224,8 @@ export default function LilDurdenClientPage() {
     }
   }
 
-  const handleAddToHome = () => {
-    setShowAddToHomeDialog(true)
+  const handleComingSoon = () => {
+    setShowComingSoonDialog(true)
   }
 
   useEffect(() => {
@@ -258,11 +258,11 @@ export default function LilDurdenClientPage() {
 
       {/* Navigation */}
       <nav className="fixed top-8 w-full px-4 md:px-8 flex justify-between items-center z-50">
-        {/* Add to Home Screen Button */}
+        {/* Coming Soon Button */}
         <button
-          onClick={handleAddToHome}
+          onClick={handleComingSoon}
           className="p-2 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-colors border border-white/20"
-          aria-label="Add to home screen"
+          aria-label="Coming soon"
         >
           <Plus size={20} className="text-white" />
         </button>
@@ -292,34 +292,31 @@ export default function LilDurdenClientPage() {
         </button>
       </nav>
 
-      {/* Add to Home Screen Dialog */}
-      {showAddToHomeDialog && (
+      {/* Coming Soon Dialog */}
+      {showComingSoonDialog && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
           <div className="bg-gray-900/95 backdrop-blur-md rounded-lg p-6 max-w-sm w-full border border-white/20 shadow-xl">
             <div className="flex justify-between items-start mb-4">
-              <h3 className="text-lg font-semibold text-white">Add to Home Screen</h3>
+              <h3 className="text-lg font-semibold text-white">Coming Soon</h3>
               <button
-                onClick={() => setShowAddToHomeDialog(false)}
+                onClick={() => setShowComingSoonDialog(false)}
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <X size={20} />
               </button>
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Add casset to your home screen to save your favorite artists and access them quickly.
+            <p className="text-gray-300 text-sm leading-relaxed mb-4">
+              Casset is coming soon and you'll be able to add your favorite artists to your collection.
             </p>
-            <div className="mt-6 flex gap-3">
+            <p className="text-gray-400 text-xs leading-relaxed">
+              Stay tuned for updates on when you can start building your personal casset library.
+            </p>
+            <div className="mt-6 flex justify-end">
               <button
-                onClick={() => setShowAddToHomeDialog(false)}
-                className="flex-1 px-4 py-2 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors text-sm"
+                onClick={() => setShowComingSoonDialog(false)}
+                className="px-4 py-2 bg-[#F1FF9B] text-black rounded-lg hover:bg-[#F1FF9B]/90 transition-colors text-sm font-medium"
               >
-                Maybe Later
-              </button>
-              <button
-                onClick={() => setShowAddToHomeDialog(false)}
-                className="flex-1 px-4 py-2 bg-[#F1FF9B] text-black rounded-lg hover:bg-[#F1FF9B]/90 transition-colors text-sm font-medium"
-              >
-                Add Now
+                Got it
               </button>
             </div>
           </div>
@@ -373,47 +370,39 @@ export default function LilDurdenClientPage() {
             </div>
           </div>
 
-          {/* Artist Name Tag - Larger and moved up */}
+          {/* Artist Name Tag - Modern user handle design with Cobra VIP "a" */}
           <div className="flex justify-center mb-6">
-            <div
-              className="backdrop-blur-sm rounded-full shadow-lg border border-gray-700/50 px-6 py-3"
-              style={{
-                transform: `rotate(-8deg)`,
-                backgroundColor: "rgb(255 255 255 / 21%)",
-              }}
-            >
-              <div className="flex items-center whitespace-nowrap">
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 312 688"
-                  className="mr-3 flex-shrink-0"
-                  xmlns="http://www.w3.org/2000/svg"
+            <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-lg">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 312 688"
+                className="text-[#F1FF9B]"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <text
+                  transform="translate(149, 344) rotate(1) translate(-149, -344)"
+                  fill="currentColor"
+                  fontFamily="CobraLLVIPTrial-500, Cobra LL VIP Trial"
+                  fontSize="620.165992"
+                  fontWeight="normal"
+                  letterSpacing="-19.88424"
                 >
-                  <text
-                    transform="translate(149, 344) rotate(1) translate(-149, -344)"
-                    fill="#EDFF7E"
-                    fontFamily="CobraLLVIPTrial-500, Cobra LL VIP Trial"
-                    fontSize="620.165992"
-                    fontWeight="normal"
-                    letterSpacing="-19.88424"
-                  >
-                    <tspan x="6" y="543">
-                      a
-                    </tspan>
-                  </text>
-                </svg>
-                <span
-                  className="text-white text-2xl"
-                  style={{
-                    fontFamily: "'AeonikPro', sans-serif",
-                    fontWeight: "900",
-                    letterSpacing: "-0.02em",
-                  }}
-                >
-                  {currentUsername}
-                </span>
-              </div>
+                  <tspan x="6" y="543">
+                    a
+                  </tspan>
+                </text>
+              </svg>
+              <span
+                className="text-white text-lg font-medium"
+                style={{
+                  fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+                  fontWeight: "500",
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                {currentUsername}
+              </span>
             </div>
           </div>
 

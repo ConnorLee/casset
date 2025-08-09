@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import "../styles/hover-effects.css"
 
 interface ArtistTagProps {
   tag: string
@@ -9,52 +8,39 @@ interface ArtistTagProps {
 }
 
 export function ArtistTag({ tag, isActive = false }: ArtistTagProps) {
-  const rotation = 1
   return (
     <motion.div
-      className="inline-flex items-center rounded-full shadow-lg transform artist-tag"
-      initial={{ opacity: 0, y: 15 }}
+      className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full shadow-sm border border-gray-200/50"
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ scale: 1.05 }}
-      style={{
-        background: "linear-gradient(to bottom, #ffffff, #f0f0f0)",
-        transform: `rotate(${rotation}deg)`,
-      }}
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.2 }}
     >
-      <div className="flex items-center whitespace-nowrap px-4 py-1.5">
-        <div className="mr-3 flex items-center justify-center">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 300 682"
-            className="text-[#EDFF7E]"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <text
-              fill="#EDFF7E"
-              fontFamily="CobraLLVIPTrial-500, Cobra LL VIP Trial"
-              fontSize="720.165992"
-              fontWeight="normal"
-              letterSpacing="-19.88424"
-            >
-              <tspan x="0" y="700">
-                a
-              </tspan>
-            </text>
-          </svg>
-        </div>
-        <span
-          className="text-[#000033]"
-          style={{
-            fontFamily: "'AeonikPro', sans-serif",
-            fontWeight: "900",
-            fontSize: "1.5em",
-            letterSpacing: "-0.02em",
-          }}
+      <svg width="20" height="20" viewBox="0 0 312 688" className="text-[#6366f1]" xmlns="http://www.w3.org/2000/svg">
+        <text
+          transform="translate(149, 344) rotate(1) translate(-149, -344)"
+          fill="currentColor"
+          fontFamily="CobraLLVIPTrial-500, Cobra LL VIP Trial"
+          fontSize="620.165992"
+          fontWeight="normal"
+          letterSpacing="-19.88424"
         >
-          {tag}
-        </span>
-      </div>
+          <tspan x="6" y="543">
+            a
+          </tspan>
+        </text>
+      </svg>
+      <span
+        className="text-gray-900 font-medium"
+        style={{
+          fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+          fontSize: "0.875rem",
+          fontWeight: "500",
+          letterSpacing: "-0.01em",
+        }}
+      >
+        {tag}
+      </span>
     </motion.div>
   )
 }
