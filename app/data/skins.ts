@@ -90,4 +90,3 @@ export const skins: SkinConfig[] = [
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Artboard%20Copy%2027-ADj6t1GOe5cCaq3UzjpEsGVAGAe5KJ.png",
   },
 ]
-

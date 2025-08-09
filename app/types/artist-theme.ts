@@ -78,4 +78,3 @@ export const artistThemes: Record<string, ArtistTheme> = {
 
 // Add default theme as fallback
 artistThemes.default = defaultTheme
-

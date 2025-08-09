@@ -1,3 +1,4 @@
+import type React from "react"
 import "./globals.css"
 import "./styles/fonts.css"
 import type { Metadata } from "next"
@@ -93,6 +94,7 @@ export const metadata: Metadata = {
     userScalable: false,
     viewportFit: "cover",
   },
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -153,4 +155,3 @@ export default function RootLayout({
 //- /public/fonts/AutoscapeRoundLLTrialWeb-Bold.woff2
 //- /public/fonts/SuperstudioTrial-Bold.otf
 //- /public/fonts/CobraVIPTrial-Regular.woff2
-

@@ -1,6 +1,14 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "./public/**/*.svg",
+      "*.{js,ts,jsx,tsx,mdx}"
+],
   theme: {
     extend: {
       fontFamily: {
@@ -14,6 +22,7 @@ module.exports = {
         autoscape: ['"Autoscape Round LL Trial"', "sans-serif"],
         superstudio: ['"Superstudio Trial"', "sans-serif"],
         cobra: ['"Cobra LL VIP Trial"', "sans-serif"],
+        satoshi: ["var(--font-satoshi)", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -37,4 +46,3 @@ module.exports = {
     },
   },
 }
-

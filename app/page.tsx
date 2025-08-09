@@ -6,7 +6,6 @@ import { motion } from "framer-motion"
 import { useState, useEffect, useCallback, useRef } from "react"
 import "./styles/fonts.css"
 import "./styles/hover-effects.css"
-import RadialAnimationsNew from "./components/RadialAnimationsNew"
 import { CassetteDisplayNew } from "./components/CassetteDisplayNew"
 import { ArtistCarousel } from "./components/ArtistCarousel"
 import TextCarousel from "./components/TextCarousel"
@@ -103,16 +102,25 @@ export default function NewLandingPage() {
       <TextCarousel />
 
       <nav className="fixed top-8 w-full px-4 md:px-8 flex justify-between items-center z-50">
-        <Image
-          src="/images/casset-logo.svg"
-          alt="Casset"
-          width={104}
-          height={50}
+        <svg
+          width="104"
+          height="50"
+          viewBox="0 0 104 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
           className="w-20 md:w-24 opacity-70 hover:opacity-100 transition-opacity cursor-pointer"
-          priority
-          draggable="false"
-        />
+        >
+          <text x="2" y="35" fill="currentColor" fontSize="40" fontFamily="Cobra VIP">
+            casset
+          </text>
+        </svg>
         <div className="flex items-center gap-4">
+          <Link href="/cover" className="text-[#000033] text-sm hover:text-[#000033]/70 transition-colors">
+            Cover
+          </Link>
+          <Link href="/gallery" className="text-[#000033] text-sm hover:text-[#000033]/70 transition-colors">
+            Gallery
+          </Link>
           <Link
             href="/app"
             className="px-4 py-1.5 bg-[#F1FF9B] text-[#000033] text-sm hover:bg-[#F1FF9B]/90 transition-colors"
@@ -123,7 +131,7 @@ export default function NewLandingPage() {
         </div>
       </nav>
 
-      <div className="min-h-screen flex flex-col md:flex-row items-center justify-center pt-4 md:pt-0">
+      <div className="min-h-screen flex flex-col md:flex-row items-center justify-center pt-4 md:pt-0 px-8 md:px-16">
         {/* Mobile content */}
         <div className="md:hidden w-full px-4 mb-4">
           <motion.div
@@ -167,7 +175,7 @@ export default function NewLandingPage() {
                 coming soon
               </Link>
               <Image
-                src="/images/base-logo.svg"
+                src="https://mann172d906w0mrr.public.blob.vercel-storage.com/base-logo-Ejd0Pns9yJKAUAqVPiX5GedbvLoOgc.svg"
                 alt="BASE"
                 width={60}
                 height={20}
@@ -178,12 +186,15 @@ export default function NewLandingPage() {
           </motion.div>
         </div>
 
-        <div className="w-full md:w-1/2 flex flex-col items-center justify-start relative px-4 md:pr-8 mt-4 md:-mt-48">
-          <div className="w-full max-w-2xl mb-8 md:mb-[-80px] -mt-[4em] md:mt-0">
+        {/* Left side - Artist Carousel and Cassette Player */}
+        <div className="w-full md:w-3/5 flex flex-col items-center justify-center relative px-4 md:pr-8">
+          <div className="w-full max-w-4xl mb-4 md:mb-[-60px] -mt-[4em] md:mt-0 scale-75 md:scale-90">
             <ArtistCarousel artists={artists} selectedArtist={selectedArtist} onArtistSelect={handleArtistSelect} />
           </div>
+
+          {/* Cassette player - smaller and positioned better */}
           <div
-            className="transform hover:scale-105 transition-transform duration-500 -mt-[7em] md:mt-[20px]"
+            className="transform hover:scale-105 transition-transform duration-500 -mt-[5em] md:mt-[10px] scale-75 md:scale-85"
             onClick={handleCassetteClick}
           >
             <CassetteDisplayNew
@@ -208,44 +219,40 @@ export default function NewLandingPage() {
           </div>
         </div>
 
-        {/* Desktop content */}
-        <div className="hidden md:flex w-full md:w-1/2 flex-col justify-center pl-16 pr-24">
+        {/* Right side - Content */}
+        <div className="hidden md:flex w-full md:w-2/5 flex-col justify-center pl-8 pr-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            {/* Remove this div */}
-            {/* <div
-              className="hidden md:block text-6xl opacity-70"
-              style={{ fontFamily: "'Cobra LL VIP Trial', sans-serif", fontWeight: "200" }}
+            <svg
+              width="120"
+              height="58"
+              viewBox="0 0 120 58"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="opacity-70 hover:opacity-100 transition-opacity"
             >
-              casset
-            </div> */}
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/casset%20copy%203-WAa2H8yl8balsP7xvDa1bXZTN8FnoZ.svg"
-              alt="Casset"
-              width={140}
-              height={68}
-              className="hidden md:block opacity-70 hover:opacity-100 transition-opacity"
-              priority
-              draggable="false"
-            />
-            <div className="flex items-center gap-3 mb-6">
+              <text x="2" y="42" fill="currentColor" fontSize="48" fontFamily="Cobra VIP">
+                casset
+              </text>
+            </svg>
+            <div className="flex items-center gap-3 mb-4">
               <span
-                className="text-5xl"
+                className="text-4xl"
                 style={{ fontFamily: "'Satoshi-Variable', sans-serif", letterSpacing: "-2px" }}
               >
                 What's on your
               </span>
               <ArtistTag tag="casset" isActive={true} />
-              <span className="text-5xl" style={{ fontFamily: "'Satoshi-Variable', sans-serif" }}>
+              <span className="text-4xl" style={{ fontFamily: "'Satoshi-Variable', sans-serif" }}>
                 ?
               </span>
             </div>
             <p
-              className="text-xl leading-relaxed font-normal"
+              className="text-lg leading-relaxed font-normal"
               style={{ fontFamily: "'Satoshi-Variable', sans-serif", fontWeight: 400 }}
             >
               create a casset with exclusive content and tracks.
@@ -262,7 +269,7 @@ export default function NewLandingPage() {
                 coming soon
               </Link>
               <Image
-                src="/images/base-logo.svg"
+                src="https://mann172d906w0mrr.public.blob.vercel-storage.com/base-logo-Ejd0Pns9yJKAUAqVPiX5GedbvLoOgc.svg"
                 alt="BASE"
                 width={60}
                 height={20}
@@ -291,4 +298,3 @@ export default function NewLandingPage() {
     </main>
   )
 }
-

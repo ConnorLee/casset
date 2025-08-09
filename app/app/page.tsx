@@ -1,7 +1,6 @@
-import { redirect } from 'next/navigation'
+import { redirect } from "next/navigation"
 
 export default function AppPage() {
-  redirect('/gate')
+  redirect("/gate")
   return null
 }
-

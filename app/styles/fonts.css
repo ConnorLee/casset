@@ -1,3 +1,14 @@
+/* Autoscape Round LL Trial */
+@font-face {
+  font-family: "Autoscape Round LL Trial";
+  src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/AutoscapeRoundLLTrialWeb-Regular-zykJEjYINPpQHRoIEf6x9YLJTsOss4.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Autoscape Round Bold */
 @font-face {
   font-family: "Autoscape Round";
   src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/AutoscapeRoundLLTrialWeb-Bold-zykJEjYINPpQHRoIEf6x9YLJTsOss4.woff2")
@@ -22,7 +33,7 @@
   font-family: "Cobra VIP";
   src: url("https://mann172d906w0mrr.public.blob.vercel-storage.com/CobraLLVIPTrialWeb-hCT03iT1bKlV5uJEFPMctkfG562mTI.woff2")
     format("woff2");
-  font-weight: normal;
+  font-weight: 100 700;
   font-style: normal;
   font-display: swap;
 }
@@ -126,4 +137,3 @@
   font-style: normal;
   font-display: swap;
 }
-

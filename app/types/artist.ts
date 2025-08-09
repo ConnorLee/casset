@@ -45,4 +45,3 @@ export const artists: Artist[] = [
     order: 3,
   },
 ]
-

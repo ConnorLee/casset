@@ -1,11 +1,14 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import { MovingBackground } from "@/components/moving-background"
+import { useRouter } from "next/navigation"
 
 const FloatingCard = ({ src, className }: { src: string; className: string }) => (
   <motion.div
@@ -29,6 +32,22 @@ const FloatingCard = ({ src, className }: { src: string; className: string }) =>
 
 export default function GatePage() {
   const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+  const router = useRouter()
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (password.toLowerCase() === "reelitin") {
+      // Set authentication token in localStorage
+      localStorage.setItem("auth-token", "authenticated")
+      // Redirect to private page
+      router.push("/private-x7k2m9")
+    } else {
+      setError("Incorrect password")
+      setTimeout(() => setError(""), 3000)
+    }
+  }
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-[#f5f5f3]">
@@ -73,7 +92,7 @@ export default function GatePage() {
             <p className="text-sm text-muted-foreground tracking-wide">ENTER PASSWORD</p>
           </div>
 
-          <div className="w-full max-w-xs">
+          <form onSubmit={handleSubmit} className="w-full max-w-xs flex flex-col items-center gap-4">
             <Input
               type="password"
               value={password}
@@ -81,11 +100,25 @@ export default function GatePage() {
               className="border-0 bg-white px-4 py-2 text-center tracking-[0.5em] shadow-[0_2px_4px_rgba(0,0,0,0.04)] focus-visible:ring-0"
               maxLength={20}
             />
-          </div>
 
-          <button className="rounded-full bg-[#ffff8a] px-8 py-1.5 text-sm font-medium hover:bg-[#ffff7a] transition-colors">
-            login
-          </button>
+            {error && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="text-sm text-red-500"
+              >
+                {error}
+              </motion.p>
+            )}
+
+            <button
+              type="submit"
+              className="rounded-full bg-[#ffff8a] px-8 py-1.5 text-sm font-medium hover:bg-[#ffff7a] transition-colors"
+            >
+              login
+            </button>
+          </form>
         </div>
 
         {/* Watermark */}
@@ -94,4 +127,3 @@ export default function GatePage() {
     </div>
   )
 }
-

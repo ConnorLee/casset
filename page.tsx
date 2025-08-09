@@ -1,17 +1,25 @@
-import Image from 'next/image'
-import { Space_Mono, Lekton, Baskervville, Caveat, Permanent_Marker, Square_Peg, Swanky_and_Moo_Moo } from 'next/font/google'
+import Image from "next/image"
+import {
+  Space_Mono,
+  Lekton,
+  Baskervville,
+  Caveat,
+  Permanent_Marker,
+  Square_Peg,
+  Swanky_and_Moo_Moo,
+} from "next/font/google"
 
-const spaceMono = Space_Mono({ 
-  weight: ['400', '700'],
-  subsets: ['latin']
+const spaceMono = Space_Mono({
+  weight: ["400", "700"],
+  subsets: ["latin"],
 })
 
-const lekton = Lekton({ weight: ['400', '700'], subsets: ['latin'], style: ['normal', 'italic'] })
-const baskervville = Baskervville({ weight: ['400'], subsets: ['latin'], style: ['normal', 'italic'] })
-const caveat = Caveat({ subsets: ['latin'] })
-const permanentMarker = Permanent_Marker({ weight: ['400'], subsets: ['latin'] })
-const squarePeg = Square_Peg({ weight: ['400'], subsets: ['latin'] })
-const swankyAndMooMoo = Swanky_and_Moo_Moo({ weight: ['400'], subsets: ['latin'] })
+const lekton = Lekton({ weight: ["400", "700"], subsets: ["latin"], style: ["normal", "italic"] })
+const baskervville = Baskervville({ weight: ["400"], subsets: ["latin"], style: ["normal", "italic"] })
+const caveat = Caveat({ subsets: ["latin"] })
+const permanentMarker = Permanent_Marker({ weight: ["400"], subsets: ["latin"] })
+const squarePeg = Square_Peg({ weight: ["400"], subsets: ["latin"] })
+const swankyAndMooMoo = Swanky_and_Moo_Moo({ weight: ["400"], subsets: ["latin"] })
 
 export default function LandingPage() {
   return (
@@ -64,9 +72,7 @@ export default function LandingPage() {
             Create a casset with exclusive content and tracks.
           </h1>
         </div>
-        <p className={`${lekton.className} text-[#F1FF9B] text-xl tracking-[0.2em]`}>
-          AND EARN INSTANTLY
-        </p>
+        <p className={`${lekton.className} text-[#F1FF9B] text-xl tracking-[0.2em]`}>AND EARN INSTANTLY</p>
       </div>
 
       {/* Cassette Player */}
@@ -84,4 +90,3 @@ export default function LandingPage() {
     </main>
   )
 }
-

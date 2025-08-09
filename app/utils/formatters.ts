@@ -22,4 +22,3 @@ export function formatDateMobile(date: Date): string {
     year: "numeric",
   })
 }
-

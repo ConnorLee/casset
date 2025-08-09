@@ -57,4 +57,3 @@ export function SkinsCarousel({ skins, selectedSkin, onSelectSkin }: SkinsCarous
     </div>
   )
 }
-
