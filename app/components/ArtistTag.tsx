@@ -22,19 +22,10 @@ export function ArtistTag({ tag, isActive = false }: ArtistTagProps) {
       }}
     >
       <div className="flex items-center whitespace-nowrap px-4 py-1.5">
-        <div className="mr-2 flex items-center justify-center">
-          <svg
-            width="20"
-            height="46"
-            viewBox="0 0 20 46"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-auto"
-          >
-            <text x="0" y="35" fill="#0000FF" fontSize="40" fontFamily="Cobra VIP">
-              a
-            </text>
-          </svg>
+        <div className="mr-3 flex items-center justify-center">
+          <span className="text-[#0000FF] text-2xl font-bold" style={{ fontFamily: "'Cobra VIP', sans-serif" }}>
+            a
+          </span>
         </div>
         <span
           className="text-[#000033]"

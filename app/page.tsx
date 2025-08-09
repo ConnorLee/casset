@@ -101,6 +101,7 @@ export default function NewLandingPage() {
       <StreamingLines />
       <TextCarousel />
 
+      {/* Navigation Section */}
       <nav className="fixed top-8 w-full px-4 md:px-8 flex justify-between items-center z-50">
         <div className="w-20 md:w-24 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
           <span
@@ -115,9 +116,12 @@ export default function NewLandingPage() {
           </span>
         </div>
         <div className="flex items-center gap-4">
+          <Link href="/about" className="text-sm font-medium hover:opacity-70 transition-colors">
+            about
+          </Link>
           <Link
             href="/app"
-            className="px-4 py-1.5 bg-[#F1FF9B] text-[#000033] text-sm hover:bg-[#F1FF9B]/90 transition-colors"
+            className="hidden md:block px-4 py-1.5 bg-[#F1FF9B] text-[#000033] text-sm hover:bg-[#F1FF9B]/90 transition-colors"
             style={{ borderRadius: 0 }}
           >
             coming soon

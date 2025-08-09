@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import {
   Space_Mono,
   Lekton,
@@ -24,6 +25,34 @@ const swankyAndMooMoo = Swanky_and_Moo_Moo({ weight: ["400"], subsets: ["latin"]
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-950 via-black to-black text-white relative overflow-hidden flex flex-col items-center justify-center px-4">
+      {/* Navigation Section */}
+      <nav className="fixed top-8 w-full px-4 md:px-8 flex justify-between items-center z-50">
+        <div className="w-20 md:w-24 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
+          <span
+            className="text-2xl md:text-3xl"
+            style={{
+              fontFamily: "'Cobra VIP', 'Arial Black', sans-serif",
+              fontWeight: "bold",
+              letterSpacing: "1px",
+            }}
+          >
+            casset
+          </span>
+        </div>
+        <div className="flex items-center gap-4">
+          <Link href="/about" className="text-sm font-medium hover:opacity-70 transition-opacity">
+            ABOUT
+          </Link>
+          <Link
+            href="/app"
+            className="px-4 py-1.5 bg-[#F1FF9B] text-[#000033] text-sm hover:bg-[#F1FF9B]/90 transition-colors"
+            style={{ borderRadius: 0 }}
+          >
+            coming soon
+          </Link>
+        </div>
+      </nav>
+
       {/* Circular Animations */}
       <div className="absolute inset-0 flex items-center justify-center">
         {[...Array(5)].map((_, i) => (

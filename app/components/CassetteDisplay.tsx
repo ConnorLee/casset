@@ -192,13 +192,12 @@ export function CassetteDisplay({
         <div className="absolute top-[4px] right-2 flex items-center z-30">
           {" "}
           {/* Updated line */}
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-16%20at%2011.02.11%E2%80%AFPM%20Copy%206-rLbsxnbr8f499wfc9vahSq2coGhrT2.png"
-            alt="Casset Logo"
-            width={60}
-            height={20}
-            className={`h-3.5 w-auto opacity-70 ${commonStyles.textColor}`}
-          />
+          <span
+            className={`text-sm ${commonStyles.textColor} opacity-70`}
+            style={{ fontFamily: "'Cobra VIP', sans-serif", fontWeight: "200" }}
+          >
+            video
+          </span>
         </div>
 
         {showInfo && (
@@ -372,8 +371,8 @@ export function CassetteDisplay({
                   <Image
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/url-MQ9fRTSlZ4tZyirkU9LrVdXFpQiDPJ.png"
                     alt="Spotify"
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
                   />
                 </a>
               </div>
@@ -523,12 +522,12 @@ export function CassetteDisplay({
         >
           VA
         </div>
-        {/* Bottom left "casset" text - update font-weight */}
+        {/* Bottom left "video" text - updated from "casset" */}
         <span
           className={`text-sm ${commonStyles.textColor}`}
           style={{ fontFamily: "'Cobra LL VIP Trial', sans-serif", fontWeight: "200" }}
         >
-          casset
+          video
         </span>
       </div>
     </div>
